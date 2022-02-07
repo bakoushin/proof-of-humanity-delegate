@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  delegate:
+    build: delegate
+    container_name: delegate
+    env_file: delegate/.env
+    ports:
+      - '3000:3002'
