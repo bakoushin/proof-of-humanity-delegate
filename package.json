@@ -1,7 +1,7 @@
 {
-  "name": "poh-delegate",
+  "name": "proof-of-humanity-delegate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proof-of-Humanity Delegate Example",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "build": "docker build -t bakoushin/poh-delegate .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["ethereum", "smart-contracts", "proofing-tools"],
   "author": "Alex Bakoushin <alex@bakoush.in>",
   "license": "MIT",
   "dependencies": {
