@@ -3,6 +3,6 @@ services:
   delegate:
     build: delegate
     container_name: delegate
-    env_file: delegate/.env
+    env_file: .env
     ports:
       - '3000:3002'
