@@ -130,10 +130,10 @@ button:hover {
   color: var(--danger-color);
 }
 
-.hidden {
-  display: none;
-}
-
 .text-accent {
   font-weight: 800;
+}
+
+.hidden {
+  display: none;
 }
