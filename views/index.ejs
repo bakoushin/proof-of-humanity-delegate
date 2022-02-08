@@ -26,15 +26,9 @@
     <div id="root">
       <div class="header">
         <h1>Proof-of-Humanity</h1>
-        <div class="header-details">
-          <div>
-            Delegate: <span id="delegate-address"><%=delegateAddress%></span>
-          </div>
-          <div>Core: <span id="core-address"><%=coreAddress%></span></div>
-        </div>
       </div>
       <div id="connect-wallet">
-        <button type="button" id="connect-wallet-button">Connect wallet</button>
+        <button type="button" id="connect-wallet-button"><span class="text-accent">Connect wallet</span></button>
       </div>
       <div id="main" class="hidden">
         <div class="wallet-info">
@@ -59,6 +53,7 @@
           <h4>3. Submit</h4>
           <div id="submission" class="line">
             <button type="submit">Sumbit evidence</button>
+            <img id="spinner" class="spinner hidden" src="spinner.gif" alt="Spinner" width="16" height="16">
             <div id="submission-error" class="error-message"></div>
           </div>
           <div id="submission-success" class="confirmation hidden">
@@ -66,6 +61,27 @@
             <span>Evidence submitted <span id="submission-time"></span></span>
           </div>
         </form>
+        <div id="tip" class="tip hidden">
+          <div class="text-accent">What next</div>
+          <div>Validate evidence for any address: <a href="https://proof-of-humanity-core-ui.glitch.me/">Proof-of-Humanity Core UI</a></div>
+        </div>
+      </div>
+      <div class="contract-details">
+        <div>
+          Delegate address: <span id="delegate-address"><%=delegateAddress%></span>
+        </div>
+        <div>Core contract: <span id="core-address"><%=coreAddress%></span></div>
+      </div>
+      <div class="footer">
+        <div>
+          Source code:
+          <span class="footer-link">
+            <a href="https://glitch.com/edit/#!/proof-of-humanity-delegate">Glitch</a>
+          </span class="footer-link">
+          <span>
+            <a href="https://github.com/bakoushin/proof-of-humanity-delegate">Github</a>
+          </span>
+        </div>
       </div>
     </div>
   </body>

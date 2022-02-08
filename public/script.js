@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const submissionError = document.getElementById('submission-error');
   const submissionSuccess = document.getElementById('submission-success');
   const submissionTime = document.getElementById('submission-time');
+  const spinner = document.getElementById('spinner');
+  const tip = document.getElementById('tip');
 
   const delegateAddress = document
     .getElementById('delegate-address')
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submissionError.textContent = 'Please complete all confirmations';
       return;
     }
+    spinner.classList.remove('hidden');
     submissionError.textContent = null;
 
     try {
@@ -94,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           submissionError.textContent = 'Server error';
         }
+        spinner.classList.add('hidden');
         throw new Error(await result.text());
       }
 
@@ -116,8 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           submission.classList.add('hidden');
+          spinner.classList.add('hidden');
           submissionTime.textContent = evidenceTime;
           submissionSuccess.classList.remove('hidden');
+          tip.classList.remove('hidden');
         }
       );
 
