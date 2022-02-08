@@ -3,5 +3,6 @@ const coreAddress = process.env.CORE_ADDRESS;
 const delegateKey = process.env.DELEGATE_KEY;
 const hcaptchaToken = process.env.HCAPTCHA_TOKEN;
 const hcaptchaSecret = process.env.HCAPTCHA_SECRET;
+const chainId = process.env.CHAIN_ID;
 
-export { port, coreAddress, delegateKey, hcaptchaToken, hcaptchaSecret };
+export { port, coreAddress, delegateKey, hcaptchaToken, hcaptchaSecret, chainId };

@@ -1,6 +1,7 @@
 'use strict';
 
 import coreABI from './core-abi.js';
+import { getNetworkNameByChainId } from './utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const connectWallet = document.getElementById('connect-wallet');
@@ -8,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const walletAddress = document.getElementById('wallet-address');
 
   const main = document.getElementById('main');
+
+  const chainError = document.getElementById('chain-error');
+  const chain = document.getElementById('chain');
+  const chainId = chain.textContent.trim();
+  chain.textContent = getNetworkNameByChainId(chainId); 
 
   const confirmOwnershipButton = document.getElementById(
     'confirm-ownership-button'
@@ -48,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
       address = accounts[0];
 
       coreContract = new web3.eth.Contract(coreABI, coreAddress);
+
+      if (chainId && chainId !== (await web3.eth.getChainId()).toString()) {
+        chainError.classList.remove('hidden');
+      }
 
       walletAddress.textContent = address;
       connectWallet.classList.add('hidden');

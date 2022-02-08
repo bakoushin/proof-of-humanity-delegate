@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import ethers from 'ethers';
 import api from './api.js';
-import { port, coreAddress, delegateKey, hcaptchaToken } from './config.js';
+import { port, coreAddress, delegateKey, hcaptchaToken, chainId } from './config.js';
 
 const wallet = new ethers.Wallet(delegateKey);
 const delegateAddress = wallet.address;
@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 app.use('/api/v1', cors(), api);
 
 app.get('/', (req, res) => {
-  res.render('index', { coreAddress, delegateAddress, hcaptchaToken });
+  res.render('index', { coreAddress, delegateAddress, hcaptchaToken, chainId });
 });
 
 app.use((req, res) => {

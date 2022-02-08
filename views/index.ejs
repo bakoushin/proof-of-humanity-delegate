@@ -33,6 +33,9 @@
       <div id="main" class="hidden">
         <div class="wallet-info">
           Address: <span id="wallet-address"></span>
+          <div id="chain-error" class="error-block hidden">
+            Please switch network to <span id="chain" class="text-accent"><%=chainId%></span> and reload the page
+          </div>
         </div>
         <form id="form">
           <h4>1. Confirm address ownership</h4>
