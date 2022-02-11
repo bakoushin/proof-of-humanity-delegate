@@ -128,18 +128,18 @@ document.addEventListener('DOMContentLoaded', () => {
           if (agent !== address) {
             return;
           }
-
-          submission.classList.add('hidden');
-          spinner.classList.add('hidden');
-          submissionTime.textContent = evidenceTime;
-          submissionSuccess.classList.remove('hidden');
-          tip.classList.remove('hidden');
         }
       );
 
       await coreContract.methods
         .submitEvidence(address, timestamp, delegateAddress, evidence)
         .send({ from: address });
+
+      submission.classList.add('hidden');
+      spinner.classList.add('hidden');
+      submissionTime.textContent = evidenceTime;
+      submissionSuccess.classList.remove('hidden');
+      tip.classList.remove('hidden');
     } catch (error) {
       console.error(error);
     }
